@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %title= content_for?(:title) ? yield(:title) : "Code for LA"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "vendor/custom.modernizr"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .row
+      .columns.large-3
+        = link_to root_url do
+          = image_tag "logo.jpg"
+        .section-container
+          %section
+            %p.title= link_to "Projects", "http://meetup.com/codeforla"
+          %section
+            %p.title= link_to "Meetup", "http://meetup.com/codeforla"
+          %section
+            %p.title= link_to "Videos", "http://www.youtube.com/channel/UCHblBr8kM1L6nzvye5M0Wzg"
+          %section
+            %p.title= link_to "Facebook", "https://www.facebook.com/groups/lacfabrigade/"
+      .columns.large-9
+        = yield
