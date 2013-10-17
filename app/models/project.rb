@@ -4,4 +4,8 @@ class Project < ActiveRecord::Base
   def embedly
     @embedly ||= Embedly.new(url) if url
   end
+
+  def to_param
+    "#{id} #{name}".parameterize
+  end
 end
