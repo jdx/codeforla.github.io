@@ -35,7 +35,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'compass-rails'
+gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'zurb-foundation', '~> 4.0.0'
 gem 'haml-rails'
 
@@ -51,6 +51,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'simple_form'
 
 group :production do
   gem 'rails_12factor'
