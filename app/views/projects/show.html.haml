@@ -1,0 +1,15 @@
+%h2= @project.name
+
+%h4.subheader= @project.description
+
+- if @project.embedly
+  %h3= @project.embedly.title
+  - if @project.embedly.html
+    %p= @project.embedly.html.html_safe
+  - else
+    %p
+      = link_to @project.embedly.url do
+        = image_tag @project.embedly.thumbnail_url
+
+- if current_user
+  %p= link_to "Edit #{@project.name}", edit_project_path(@project)

@@ -15,12 +15,17 @@
           = image_tag "logo.jpg"
         .section-container
           %section
-            %p.title= link_to "Projects", "http://meetup.com/codeforla"
+            %p.title= link_to "Projects", projects_path
           %section
             %p.title= link_to "Meetup", "http://meetup.com/codeforla"
           %section
             %p.title= link_to "Videos", "http://www.youtube.com/channel/UCHblBr8kM1L6nzvye5M0Wzg"
           %section
             %p.title= link_to "Facebook", "https://www.facebook.com/groups/lacfabrigade/"
+          - if current_user
+            %section
+              %p.title= link_to "Admin", admin_root_path
       .columns.large-9
+        - if flash[:notice]
+          .alert-box= flash[:notice]
         = yield

@@ -53,6 +53,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'simple_form'
 
+gem 'faraday'
+gem 'faraday_middleware'
+
 group :production do
   gem 'rails_12factor'
 end
